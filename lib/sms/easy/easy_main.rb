@@ -18,6 +18,7 @@ module SMSEasy
         Pony.mail({:to => email, :body => message, :from => from}.merge!(@pony_config))
       else
         ActionMailer::Base.mail(from: from, to: email, body: message).deliver_now!
+        
       end
     end
 
