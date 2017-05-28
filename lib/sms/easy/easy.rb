@@ -17,11 +17,8 @@ module SMSEasy
       if @delivery == :pony
         Pony.mail({:to => email, :body => message, :from => from}.merge!(@pony_config))
       else
-        if ActionMailer.version.version.to_f >= 4.2
-          SMSEasyNotifier.send_sms(email, message, from).deliver_now
-        else
-          SMSEasyNotifier.send_sms(email, message, from).deliver
-        end
+        #send directly without template
+        ActionMailer::Base.mail(from: from, to: email, body: message).deliver_now!
       end
     end
 
