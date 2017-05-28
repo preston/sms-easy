@@ -17,8 +17,8 @@ module SMSEasy
       if @delivery == :pony
         Pony.mail({:to => email, :body => message, :from => from}.merge!(@pony_config))
       else
+        #send directly without template
         ActionMailer::Base.mail(from: from, to: email, body: message).deliver_now!
-        
       end
     end
 
