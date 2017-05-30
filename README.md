@@ -7,13 +7,13 @@ This is largely based on Brendan Lim's sms-fu for older apps. (https://github.co
 Rails 4 integration is supported, though not required. Additionally, SMSEasy works perfectly well with background job processing gems such as Sidekiq and delayed_job.
 
 
-## Supported Carriers (US & International): 
+## Supported Carriers (US & International):
 
-Alltel, Ameritech, AT&T, Bell Atlantic, BellSouth Mobility, Beeline(UA), BlueSkyFrog, 
-Boost Mobile, BPL Mobile, Cellular South, Claro (Brazil, Nicaragua), Comcast, Du, 
-E-Plus, Etisalat, Fido, kajeet, Mobinil, Mobitel, Movistar, Metro PCS, O2, Orange, 
-Powertel, PSC Wireless, Qwest, Rogers, Southern Link, Sprint, Suncom, 
-T-Mobile (US/UK/Germany), Telefonica, Tracfone, Virgin Mobile, Verizon Wireless, 
+Alltel, Ameritech, AT&T, Bell Atlantic, BellSouth Mobility, Beeline(UA), BlueSkyFrog,
+Boost Mobile, BPL Mobile, Cellular South, Claro (Brazil, Nicaragua), Comcast, Du,
+E-Plus, Etisalat, Fido, kajeet, Mobinil, Mobitel, Movistar, Metro PCS, O2, Orange,
+Powertel, PSC Wireless, Qwest, Rogers, Southern Link, Sprint, Suncom,
+T-Mobile (US/UK/Germany), Telefonica, Tracfone, Virgin Mobile, Verizon Wireless,
 Vodafone (UK, Egypt, Italy, Japan, Spain), and many more ...
 
 Some International carriers require that their users subscribe to an Email to SMS
@@ -23,24 +23,24 @@ limitation.  Some of these carriers are include, Mobitel, Etisalat, T-Mobile (Ne
 
 ## Requirements
 
-* SMSEasy requires the use of a recent version of 'action\_mailer'. Unlike the older sms-fu gem, ***only* action\_mailer 4 is supported**. If you have an older app, please try one of the older variants that supports action\_mailer 3 and/or pony email agents.
+* SMSEasy requires the use of a recent version of 'action\_mailer'. Unlike the older sms-fu gem, **_only_ action\_mailer 4/5 is supported**. If you have an older app, please try one of the older variants that supports action\_mailer 3 and/or pony email agents.
 
 
 ## Setup Instructions
 
 Install the sms-easy gem:
-  
+
     gem install sms-easy
 
 
-  
+
 
 ## Numbers and Carriers
 
 * You'll need 10-digit phone numbers, stripped of any non-numeric characters.
 * As SMSEasy relies on free carrier-specific email-to-SMS gateways, you'll also need to know the carrier of the receiving phone number.
 * Here are some of the default carrier values:
-		
+
     Alltel Wireless   =>  "alltel"
     AT&T/Cingular     =>  "at&t"
     Boost Mobile      =>  "boost"
@@ -107,19 +107,19 @@ Install the sms-easy gem:
 ## View Helpers (Rails)
 
 Include view helpers in application_helper.rb:
-    
+
 	module ApplicationHelper
       include SMSEasyHelper
     end
 
 Retrieve a collection of all carriers
-    
+
     <%= carrier_collection %>
 
 Display a select box with mobile carriers
 
     <%= carrier_select %>
-    
+
 Display a custom select box with mobile carriers
 
     <%= carrier_select('user[carrier_name]', "Please choose a carrier") %>
@@ -134,4 +134,4 @@ I want to thank the following individuals with their help with adding some patch
 
 Copyright (c) 2010 Brendan G. Lim, Intridea, Inc., released under the MIT license
 
-Additional modifications, updates, refactorings etc. by Preston Lee.
+Additional modifications, updates, refactorings etc. by Preston Lee 2013-2017.
