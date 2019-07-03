@@ -4,7 +4,7 @@ SMSEasy allows you to send SMS messages from your Ruby application for free usin
 
 This is largely based on Brendan Lim's sms-fu for older apps. (https://github.com/brendanlim/sms-fu) If you're replacing sms-fu, SMSEasy is very similar, but not identical, and does not support legacy versions of activerecord.
 
-Rails 4 integration is supported, though not required. Additionally, SMSEasy works perfectly well with background job processing gems such as Sidekiq and delayed_job.
+Rails 5.2 integration is supported, though not required. Additionally, SMSEasy works perfectly well with background job processing gems such as Sidekiq and delayed_job.
 
 
 ## Supported Carriers (US & International):
@@ -23,7 +23,7 @@ limitation.  Some of these carriers are include, Mobitel, Etisalat, T-Mobile (Ne
 
 ## Requirements
 
-* SMSEasy requires the use of a recent version of 'action\_mailer'. Unlike the older sms-fu gem, **_only_ action\_mailer 4/5 is supported**. If you have an older app, please try one of the older variants that supports action\_mailer 3 and/or pony email agents.
+* SMSEasy requires the use of a recent version of 'action\_mailer'. **_Only_ action\_mailer 5.2+ is supported**. If you have an older app, please try one of the older variants that supports action\_mailer 3/4 and/or pony email agents.
 
 
 ## Setup Instructions
@@ -31,9 +31,6 @@ limitation.  Some of these carriers are include, Mobitel, Etisalat, T-Mobile (Ne
 Install the sms-easy gem:
 
     gem install sms-easy
-
-
-
 
 ## Numbers and Carriers
 
@@ -131,6 +128,7 @@ I want to thank the following individuals with their help with adding some patch
 * Brent Collier (brentmc79)
 * Peter Boling (pboling)
 * Mike (mic)
+* chptung
 
 Copyright (c) 2010 Brendan G. Lim, Intridea, Inc., released under the MIT license
 
